@@ -1,0 +1,21 @@
+{
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "quiz": "Quiz",
+    "question": "Question",
+    "list": "List",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "correct": "Correct Answer",
+    "active": "Active",
+    "inactive": "Inactive",
+
+
+    "flash message create success": "create was done successfully",
+    "flash message change success": "change was done successfully",
+    "flash message edit success": "edit was done successfully",
+    "flash message delete success": "delete was done successfully",
+    "flash message delete error": "create was done successfully"
+
+}
