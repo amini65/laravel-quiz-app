@@ -28,7 +28,7 @@ class Quiz extends Model
     }
     public function userQuiz()
     {
-        return $this->belongsTo(UserQuiz::class);
+        return $this->belongsTo(UserQuiz::class,'id','quiz_id');
     }
 
 

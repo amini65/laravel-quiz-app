@@ -23,6 +23,14 @@ class UserQuizRepo
         return UserQuiz::query()->where('user_id',$user)
             ->where('quiz_id',$quiz)->first();
     }
+    public function update($quiz,$params,$scoure)
+    {
+        return $quiz->update([
+            'answer'=>json_encode($params['answer']),
+            'result'=>$scoure,
+            'status'=>'done'
+        ]);
+    }
     public function getUserAllQuiz($user)
     {
       return  Quiz::query()->join('user_quizzes', 'user_quizzes.quiz_id', '=', 'quizzes.id')

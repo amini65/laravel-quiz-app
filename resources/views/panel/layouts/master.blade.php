@@ -18,10 +18,6 @@
     @yield('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
-
-{{--    importScripts('/__/firebase/6.6.2/firebase-app.js');--}}
-{{--    importScripts('/__/firebase/6.6.2/firebase-messaging.js');--}}
 </head>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
@@ -108,37 +104,12 @@
                         </div>
                     </div>
                 </div>
-{{--                <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">--}}
-{{--                    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">--}}
-{{--                        <div class="toast-header">--}}
-{{--                            <img src="..." class="rounded me-2" alt="...">--}}
-{{--                            <strong class="me-auto">Bootstrap</strong>--}}
-{{--                            <small>11 mins ago</small>--}}
-{{--                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>--}}
-{{--                        </div>--}}
-{{--                        <div class="toast-body">--}}
-{{--                            Hello, world! This is a toast message.--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-                <div  id="liveToast" class="position-fixed bottom-0 end-0 m-10 d-none">
-                <div class="card bg-dark ">
-                    <div class="p-7 d-flex align-items-senter">
-                        <div class="fw-semibold text-gray-100 mb-2">Want to get notification from us?</div>
-                        <div class="d-flex align-items-senter">
-                            <button onclick="startFCM()" class="btn btn-sm btn-dark ">Yes</button>
-                            <button onclick="startFCM()" class="btn btn-sm btn-dark">No</button>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
-            <!--end:::Main-->
-        </div>
-        <!--end::Wrapper-->
-    </div>
-    <!--end::Page-->
 
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 <!--end::App-->
@@ -148,16 +119,6 @@
 @yield('js')
 <script src="{{ asset('js/laravel.js') }}"></script>
 
-
-<script>
-    if (Notification.permission === 'granted') {
-        $('#liveToast').hide();
-    }
-    else if (Notification.permission === 'default') {
-        $('#liveToast').removeClass('d-none');
-    }
-
-</script>
 
 
 
