@@ -15,4 +15,10 @@ class UserQuiz extends Model
         'result',
         'status',
     ];
+
+
+    public function quiz()
+    {
+        return $this->belongsTo(Quiz::class);
+    }
 }

@@ -17,14 +17,20 @@ class UserQuizController extends Controller
         $this->repo=$repo;
     }
 
-    public function start($id)
+    public function quiz()
     {
         $user = Auth::user();
 
+        $lists=$this->repo->getQuizUser($user->id);
+        return view('panel.user-quiz.lists', compact('lists'))->with('title',__('quiz'));
+    }
+
+    public function start($id)
+    {
+        $user = Auth::user();
         $result=$this->repo->getWithUserQuiz($user->id,$id);
         if($result)
             abort(403);
-
         $quizRepo = new QuizeRepo();
         $quiz = $quizRepo->getQuizQuestion($id);
         $userQuiz = $this->repo->create($user->id, $id);
@@ -46,9 +52,8 @@ class UserQuizController extends Controller
             else
                 $wrongAnswer+=1;
         }
-
-        $scoure= 100 * ($questions->count() - $wrongAnswer) / $questions->count();
-        $this->repo->update($result,$request->all(),$scoure);
+        $scour= 100 * ($questions->count() - $wrongAnswer) / $questions->count();
+        $this->repo->update($result,$request->all(),$scour);
 
         return redirect()->route('dashboard');
 

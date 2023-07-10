@@ -9,6 +9,12 @@ use App\Models\UserQuiz;
 class UserQuizRepo
 {
 
+    public function getQuizUser($user)
+    {
+        return UserQuiz::query()
+            ->with('quiz')
+            ->where('user_id',$user)->get();
+    }
 
     public function create($user,$quiz)
     {

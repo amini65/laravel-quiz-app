@@ -5,16 +5,14 @@
 
         @if($quizzes)
             @foreach($quizzes as $quiz)
-
-                <x-widgets.exam
-                    title="{!! $quiz->name !!}" count="{!! $quiz->QuestionsCount !!}"
-                    time="{!! $quiz->time !!} min" route="{{ route('quiz.start',$quiz->id) }}" status="{{ ($quiz->userQuiz)?false:true }}"
-                />
-
+                @if(!$quiz->userQuiz)
+                    <x-widgets.exam
+                        title="{!! $quiz->name !!}" count="{!! $quiz->QuestionsCount !!}"
+                        time="{!! $quiz->time !!} min" route="{{ route('quiz.start',$quiz->id) }}" status="{{ ($quiz->userQuiz)?false:true }}"
+                    />
+                @endif
             @endforeach
         @endif
-{{--        <x-widgets.exam/>--}}
-{{--        <x-widgets.exam/>--}}
     </div>
 
 @endsection

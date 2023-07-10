@@ -24,14 +24,14 @@
     <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
 
         <div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
-           @can('admin')
             <x-menu-item type="single" icon="dashboard" link="{{ route('dashboard') }}" text="{{ __('dashboard')}}"/>
+           @can('admin')
             <x-menu-item type="single" icon="users" link="{{ route('users.index') }}" text="{{ __('users')}}"/>
             <x-menu-item type="single" icon="quiz" link="{{ route('quizzes.index') }}" text="{{ __('quiz')}}"/>
             <x-menu-item type="single" icon="question" link="{{ route('questions.index') }}" text="{{ __('question')}}"/>
             @endcan
            @cannot('admin')
-               <x-menu-item type="single" icon="question" link="{{ route('questions.index') }}" text="{{ __('question')}}"/>
+               <x-menu-item type="single" icon="question" link="{{ route('users.quiz') }}" text="{{ __('quiz')}}"/>
            @endcan
         </div>
     </div>
