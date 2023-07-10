@@ -25,6 +25,11 @@ class QuestionRepo implements CrudInterface
         return $this->model::query()
             ->where('id',$id)->first();
     }
+    public function findWithQuizId(int $quiz)
+    {
+        return $this->model::query()
+            ->where('quiz_id',$quiz)->get();
+    }
 
     public function store(array $data)
     {

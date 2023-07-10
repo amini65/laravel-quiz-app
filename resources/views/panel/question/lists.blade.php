@@ -16,9 +16,8 @@
                 <x-slot name="thead">
                     <tr class="fw-bold text-muted bg-light">
                         <th class="ps-4">#</th>
-                        <th class="">{{ __('name') }}</th>
-                        <th class="">{{ __('time') }}</th>
-                        <th class="">{{ __('questions') }}</th>
+                        <th class="">{{ __('quiz') }}</th>
+                        <th class="">{{ __('question') }}</th>
                         <th class=""></th>
 
                     </tr>
@@ -30,13 +29,12 @@
                         @foreach($lists as $key=>$list)
                             <tr>
                                 <td class="ps-4" >{!! $key+1 !!} </td>
-                                <td >{!! $list->name !!} </td>
-                                <td >{!! $list->time !!} </td>
-                                <td >{!! $list->questions->count() !!} </td>
+                                <td >{!! $list->quiz->name !!} </td>
+                                <td >{!! $list->question !!} </td>
                                 <td>
                                     <x-button.table route="{{ route($route.'.edit',[$list->id]) }}" icon="edit" title="{{__('edit')}} {!! $title !!}" />
                                     <x-button.delete route="{{ route($route.'.destroy',[$list->id]) }}" icon="delete" title="{{__('delete')}} {!! $title !!}" />
-                                    <x-button.table route="{{ route($route.'.show',[$list->id]) }}" icon="forward" title="{{__('delete')}} {!! $title !!}" />
+
                                 </td>
                             </tr>
                         @endforeach

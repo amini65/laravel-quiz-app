@@ -16,6 +16,18 @@ class QuizeRepo implements CrudInterface
         $this->model = resolve(Quiz::class);
     }
 
+    public function getAllQuizUser($user)
+    {
+        return $this->model::query()->with('userQuiz',function ($query)use ($user){
+           $query->where('user_id',$user);
+        })->get();
+    }
+    public function getQuizQuestion($id)
+    {
+        return $this->model::query()->with('questions')
+            ->where('id',$id)
+            ->first();
+    }
     public function all()
     {
         return $this->model::query()

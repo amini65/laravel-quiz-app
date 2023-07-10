@@ -2,6 +2,7 @@
     "dashboard": "Dashboard",
     "users": "Users",
     "quiz": "Quiz",
+    "time": "Time",
     "question": "Question",
     "list": "List",
     "create": "Create",
@@ -10,6 +11,7 @@
     "correct": "Correct Answer",
     "active": "Active",
     "inactive": "Inactive",
+    "total question": "Total Question",
 
 
     "flash message create success": "create was done successfully",
